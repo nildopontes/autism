@@ -39,7 +39,7 @@ dialog{
 }
 #cover{
    background:red;
-   background:url('bg.png');
+   background:url('images/bg.png');
    background-position:center;
    font-size:45px;
    color:green;
