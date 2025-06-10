@@ -171,7 +171,7 @@ function mix(){
 function genNumbers(){
    let numbers = new Set();
    while(true){
-      numbers.add(Math.floor(Math.random() * 88)); // 88 is total of images
+      numbers.add(Math.floor(Math.random() * 138)); // 138 is total of images
       if(numbers.size == 3) break;
    }
    return [...numbers];
