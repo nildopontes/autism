@@ -4,7 +4,6 @@ function startTouch(event){
    element.dataset.refX = event.changedTouches[0].clientX;
    element.dataset.refY = event.changedTouches[0].clientY;
    element.style.zIndex = 2;
-   playSound('touch.mp3');
    element.dataset.moving = 'yes';
    event.preventDefault();
 }
@@ -179,7 +178,7 @@ function genNumbers(){
 function loadNewLevel(){
    let posY = mix();
    let seeds = genNumbers();
-   createObject(`img${seeds[0]}`, `img${seeds[0]}.png`, 'audio.mp3', posY[1], posY[0]);
-   createObject(`img${seeds[1]}`, `img${seeds[1]}.png`, 'audio.mp3', posY[2], posY[1]);
-   createObject(`img${seeds[2]}`, `img${seeds[2]}.png`, 'audio.mp3', posY[0], posY[2]);
+   createObject(`img${seeds[0]}`, `images/img${seeds[0]}.png`, 'sounds/audio.mp3', posY[1], posY[0]);
+   createObject(`img${seeds[1]}`, `images/img${seeds[1]}.png`, 'sounds/audio.mp3', posY[2], posY[1]);
+   createObject(`img${seeds[2]}`, `images/img${seeds[2]}.png`, 'sounds/audio.mp3', posY[0], posY[2]);
 }
