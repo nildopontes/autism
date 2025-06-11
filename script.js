@@ -165,7 +165,7 @@ let objNames = {
    161: "prego",
    162: "formiga",
    163: "alicate",
-   164: "alicate",
+   164: "martelo",
 }
 function downloadFile(blob, index){
    let a = document.createElement('a');
@@ -341,7 +341,9 @@ continuing (Boolean): true se o jogo estiver iniciando após uma pausa ou false 
 function start(continuing){
    $('wrap').requestFullscreen().then(() => {
       if(!screen.orientation.type.includes('landscape')){
-         screen.orientation.lock('landscape').then(() => loadNewLevel()).catch(err => {
+         screen.orientation.lock('landscape').then(() => {
+            if(!continuing) loadNewLevel();
+         }).catch(err => {
             /*Decidir aqui o que fazer se for necessário girar a tela e o acesso for negado*/
          });
       }else{
