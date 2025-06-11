@@ -17,12 +17,16 @@
          "use strict";
          var step = 0;
          var stepQuantity = 0;
+         var paused = false;
          window.addEventListener('load', event => {
             $('cover').showModal();
          });
          document.addEventListener('fullscreenchange', () => {
             if(!document.fullscreenElement){
+               paused = true;
                $('paused').showModal();
+            }else{
+               paused = false;
             }
          });
       </script>
@@ -31,8 +35,8 @@
    </head>
    <body>
       <div id="wrap"></div>
-      <dialog id="cover" class="playPause"><input type="button" value="INICIAR" onclick="start(false)"></dialog>
-      <dialog id="paused" class="playPause"><input type="button" value="CONTINUAR" onclick="$('paused').close(); start(true)"></dialog>
+      <dialog id="cover" class="playPause"><input type="button" value="INICIAR" onclick="start()"></dialog>
+      <dialog id="paused" class="playPause"><input type="button" value="CONTINUAR" onclick="$('paused').close(); start()"></dialog>
       <dialog id="alert">
          <span class="star">★★★★★</span><br>
          <span class="coongrat">Parabéns!</span><br>

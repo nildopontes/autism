@@ -336,18 +336,17 @@ function createObject(index, startY, endY){
 }
 /*
 Inicia ou resume o jogo
-continuing (Boolean): true se o jogo estiver iniciando após uma pausa ou false se for a primeira chamada
 */
-function start(continuing){
+function start(){
    $('wrap').requestFullscreen().then(() => {
       if(!screen.orientation.type.includes('landscape')){
          screen.orientation.lock('landscape').then(() => {
-            if(!continuing) loadNewLevel();
+            if(!paused) loadNewLevel();
          }).catch(err => {
             /*Decidir aqui o que fazer se for necessário girar a tela e o acesso for negado*/
          });
       }else{
-         if(!continuing) loadNewLevel();
+         if(!paused) loadNewLevel();
       }
       $('cover').close();
    });
