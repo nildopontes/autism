@@ -17,10 +17,14 @@
          "use strict";
          var step = 0;
          var stepQuantity = 0;
-         window.addEventListener('load', event => { 
-            /*Gere uma imagem ilustrativa, tipo animação, de um cão. As linhas devem ser uniformes e definidas. As cores devem ser uniformes. O fundo por trás da imagem deve ser branco.*/
+         window.addEventListener('load', event => {
             $('cover').showModal();
-            loadNewLevel();
+         });
+         document.addEventListener('fullscreenchange', () => {
+            if(!document.fullscreenElement){
+               paused = true;
+               $('paused').showModal();
+            }
          });
       </script>
       <style id="animation"></style>
@@ -28,7 +32,8 @@
    </head>
    <body>
       <div id="wrap"></div>
-      <dialog id="cover"><input type="button" value="INICIAR" onclick="start()"></dialog>
+      <dialog id="cover" class="playPause"><input type="button" value="INICIAR" onclick="start(false)"></dialog>
+      <dialog id="paused" class="playPause"><input type="button" value="CONTINUAR" onclick="$('paused').close(); start(true)"></dialog>
       <dialog id="alert">
          <span class="star">★★★★★</span><br>
          <span class="coongrat">Parabéns!</span><br>

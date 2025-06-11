@@ -37,7 +37,7 @@ dialog{
 #wrap>img{
    position:absolute;
 }
-#cover{
+.playPause{
    background:red;
    background:url('images/bg.png');
    background-position:center;
