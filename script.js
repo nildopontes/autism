@@ -103,7 +103,7 @@ let objNames = {
    99: "letra b",
    100: "letra c",
    101: "letra d",
-   102: "letra é",
+   102: "letra e",
    103: "letra f",
    104: "letra g",
    105: "vaca",
@@ -290,6 +290,7 @@ function $(id){
    return document.getElementById(id);
 }
 /*
+Cria e xexibe um objeto na tela
 index (Interger): id do objeto, faz referência à imagem e som associados ao objeto.
 endY (Interger): Posição final do objeto no eixo Y.
 startY (Interger): Posição inicial do objeto no eixo Y.
@@ -360,6 +361,9 @@ function removeAll(){
    let objects = document.querySelectorAll('#wrap img');
    objects.forEach(obj => obj.remove());
 }
+/*
+embaralha as posições dos objetos na tela
+*/
 function mix(){
    let arr = [5, 40, 70];
    for(let i = 2; i > 0; i--){
@@ -368,6 +372,9 @@ function mix(){
    }
    return arr;
 }
+/*
+Gera aleatoriamente e números diferentes correspondentes aos índices dos objetos
+*/
 function genNumbers(){
    let numbers = new Set();
    while(true){
@@ -376,6 +383,9 @@ function genNumbers(){
    }
    return [...numbers];
 }
+/*
+Exibe uma nova rodada do jogo
+*/
 function loadNewLevel(){
    let posY = mix();
    let seeds = genNumbers();
