@@ -166,6 +166,11 @@ let objNames = {
    162: "formiga",
    163: "alicate",
    164: "martelo",
+   165: "tesoura",
+   166: "caneta",
+   167: "arco-íris",
+   168: "clipe de papel",
+   169: "pincel",
 }
 function downloadFile(blob, index){
    let a = document.createElement('a');
@@ -379,7 +384,7 @@ Gera aleatoriamente e números diferentes correspondentes aos índices dos objet
 function genNumbers(){
    let numbers = new Set();
    while(true){
-      numbers.add(Math.floor(Math.random() * 165)); // 165 is total of images
+      numbers.add(Math.floor(Math.random() * 170)); // 170 is total of images
       if(numbers.size == 3) break;
    }
    return [...numbers];
